@@ -16,7 +16,6 @@
 
 # Step 1: Download all the needed configuration files
 wget https://raw.githubusercontent.com/${12}/bgpd.conf -P /root/
-wget https://raw.githubusercontent.com/${12}/bgpd.conf -P /root/
 wget https://raw.githubusercontent.com/${12}/ipsec-vti.sh -P /root/
 wget https://raw.githubusercontent.com/${12}/ipsec.conf -P /root/
 wget https://raw.githubusercontent.com/${12}/ipsec.secrets -P /root/
