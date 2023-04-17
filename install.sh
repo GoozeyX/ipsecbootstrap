@@ -15,13 +15,14 @@
 # $12 -> GITREPO (GoozeyX/ipsecbootstrap/main)
 
 # Step 1: Download all the needed configuration files
-wget https://raw.githubusercontent.com/'$12'/bgpd.conf -P /root/
-wget https://raw.githubusercontent.com/'$12'/ipsec-vti.sh -P /root/
-wget https://raw.githubusercontent.com/'$12'/ipsec.conf -P /root/
-wget https://raw.githubusercontent.com/'$12'/ipsec.secrets -P /root/
-wget https://raw.githubusercontent.com/'$12'/strongswan.conf -P /root/
-wget https://raw.githubusercontent.com/'$12'/sysctl.conf -P /root/
-wget https://raw.githubusercontent.com/'$12'/zebra.conf -P /root/
+wget https://raw.githubusercontent.com/${12}/bgpd.conf -P /root/
+wget https://raw.githubusercontent.com/${12}/bgpd.conf -P /root/
+wget https://raw.githubusercontent.com/${12}/ipsec-vti.sh -P /root/
+wget https://raw.githubusercontent.com/${12}/ipsec.conf -P /root/
+wget https://raw.githubusercontent.com/${12}/ipsec.secrets -P /root/
+wget https://raw.githubusercontent.com/${12}/strongswan.conf -P /root/
+wget https://raw.githubusercontent.com/${12}/sysctl.conf -P /root/
+wget https://raw.githubusercontent.com/${12}/zebra.conf -P /root/
 
 # Replace needed data in ipsec.conf with SED and then move it to the right folder and chmod/chown it
 sed -i 's/TUNNEL1_VGW_OUTSIDE_IP/'$1'/g' /root/ipsec.conf
@@ -48,5 +49,5 @@ sed -i 's/TUNNEL1_VGW_INSIDE_IP/'$4'/g' /root/bgpd.conf
 sed -i 's/TUNNEL2_VGW_INSIDE_IP/'$6'/g' /root/bgpd.conf
 
 # Replace needed data inside ipsec.secrets
-sed -i 's/TUNNEL1_PSK/'$10'/g' /root/ipsec.secrets
-sed -i 's/TUNNEL2_PSK/'$11'/g' /root/ipsec.secrets
+sed -i 's/TUNNEL1_PSK/'${10}'/g' /root/ipsec.secrets
+sed -i 's/TUNNEL2_PSK/'${11}'/g' /root/ipsec.secrets
