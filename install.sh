@@ -63,6 +63,10 @@ chown quagga:quagga /etc/quagga/bgpd.conf
 # Replace needed data inside ipsec.secrets
 sed -i 's/TUNNEL1_PSK/'${10}'/g' /root/ipsec.secrets
 sed -i 's/TUNNEL2_PSK/'${11}'/g' /root/ipsec.secrets
+
+sed -i 's/TUNNEL1_VGW_OUTSIDE_IP/'${1}'/g' /root/ipsec.secrets
+sed -i 's/TUNNEL2_VGW_OUTSIDE_IP/'${2}'/g' /root/ipsec.secrets
+
 mv -f /root/ipsec.secrets /etc/strongswan/ipsec.secrets
 chmod 600 /etc/strongswan/ipsec.secrets
 
