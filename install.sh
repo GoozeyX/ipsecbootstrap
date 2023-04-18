@@ -76,3 +76,10 @@ sysctl -p /etc/sysctl.conf
 sysctl -w net.ipv4.ip_forward=1
 sysctl -w net.ipv4.conf.eth0.disable_xfrm=1
 sysctl -w net.ipv4.conf.eth0.disable_policy=1
+
+systemctl enable strongswan
+systemctl start  strongswan
+systemctl enable zebra
+systemctl start  zebra
+systemctl enable bgpd
+systemctl start  bgpd
