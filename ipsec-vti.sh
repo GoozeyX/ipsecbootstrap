@@ -41,5 +41,5 @@ esac
 
 # Enable IPv4 forwarding
 sysctl -w net.ipv4.ip_forward=1
-sysctl -w net.ipv4.conf.ens5.disable_xfrm=1
-sysctl -w net.ipv4.conf.ens5.disable_policy=1
+sysctl -w net.ipv4.conf.eth0.disable_xfrm=1
+sysctl -w net.ipv4.conf.eth0.disable_policy=1
